@@ -62,216 +62,179 @@
           opacity: 1;
           transform: translateY(0);
         }
+
+        /* ---------- HERO (WITH BACKGROUND IMAGE) ---------- */
+        .bs-hero {
+          position: relative;
+          padding: 120px 0 100px;
+          /* NOTE: Ensure you have 'images/hero-collage.jpg' in your project folder */
+          background: 
+            linear-gradient(180deg, rgba(11, 31, 20, 0.88) 0%, rgba(11, 31, 20, 0.82) 100%),
+            url('images/hero-collage.jpg') center/cover no-repeat;
+          color: var(--bs-cream);
+          overflow: hidden;
+          isolation: isolate;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+        }
         
-        /* ---------- HERO ---------- */
-/* ---------- HERO ---------- */
-.bs-hero {
-  position: relative;
-  padding: 120px 0 100px;
-  background: 
-    linear-gradient(180deg, rgba(11, 31, 20, 0.88) 0%, rgba(11, 31, 20, 0.82) 100%),
-    url('images/hero-collage.jpg') center/cover no-repeat;
-  color: var(--bs-cream);
-  overflow: hidden;
-  isolation: isolate;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
-.bs-hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.bs-hero__bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(11, 31, 20, 0.35) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.bs-hero__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-}
-.bs-hero__orb--1 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, var(--bs-gold) 0%, transparent 70%);
-  top: -200px; right: -150px;
-  opacity: 0.4;
-}
-.bs-hero__orb--2 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, var(--bs-gold-soft) 0%, transparent 70%);
-  bottom: -150px; left: -100px;
-  opacity: 0.3;
-}
-.bs-hero__grid-lines {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-  z-index: 2;
-}
-
-.bs-hero__inner {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  max-width: 880px;
-  margin: 0 auto;
-}
-
-.bs-hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 18px;
-  background: var(--bs-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--bs-cream);
-  margin-bottom: 32px;
-}
-.bs-hero__badge-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-  animation: bs-pulse 2s infinite;
-}
-@keyframes bs-pulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25); }
-  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-}
-
-.bs-hero__title {
-  font-family: 'Syne', serif;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0 0 24px;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-.bs-hero__title-accent {
-  background: linear-gradient(135deg, var(--bs-gold) 0%, var(--bs-gold-soft) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.bs-hero__subtitle {
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  line-height: 1.65;
-  color: rgba(250, 247, 242, 0.85);
-  max-width: 640px;
-  margin: 0 auto 40px;
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-}
-.bs-hero__subtitle strong {
-  color: var(--bs-cream);
-  font-weight: 600;
-}
-
-.bs-hero__ctas {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 56px;
-}
-
-.bs-hero__proof {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 22px;
-  background: var(--bs-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 100px;
-}
-.bs-hero__avatars {
-  display: flex;
-}
-.bs-avatar {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--bs-cream);
-  font-weight: 700;
-  font-size: 12px;
-  border: 2px solid var(--bs-forest);
-  margin-left: -8px;
-}
-.bs-avatar:first-child { margin-left: 0; }
-.bs-hero__proof-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 13px;
-  color: rgba(250, 247, 242, 0.85);
-}
-.bs-stars {
-  color: var(--bs-gold);
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-
-/* Mobile optimization for collage background */
-@media (max-width: 768px) {
-  .bs-hero {
-    background: 
-      linear-gradient(180deg, rgba(11, 31, 20, 0.94) 0%, rgba(11, 31, 20, 0.90) 100%),
-      url('images/hero-collage.jpg') center/cover no-repeat;
-    min-height: auto;
-    padding: 100px 0 80px;
-  }
-  .bs-hero__orb--1 {
-    width: 400px; height: 400px;
-    top: -100px; right: -80px;
-  }
-  .bs-hero__orb--2 {
-    width: 300px; height: 300px;
-    bottom: -80px; left: -60px;
-  }
-}
-
-@media (max-width: 640px) {
-  .bs-hero {
-    background: 
-      linear-gradient(180deg, rgba(11, 31, 20, 0.96) 0%, rgba(11, 31, 20, 0.92) 100%),
-      url('images/hero-collage.jpg') center/cover no-repeat;
-    padding: 90px 0 70px;
-  }
-  .bs-hero__ctas { flex-direction: column; align-items: stretch; }
-  .bs-btn { justify-content: center; width: 100%; }
-  .bs-hero__proof {
-    flex-direction: column;
-    gap: 10px;
-    padding: 16px;
-    width: 100%;
-  }
-  .bs-hero__proof-text { align-items: center; text-align: center; }
-} 
+        .bs-hero__bg {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+        }
+        
+        /* Vignette Effect */
+        .bs-hero__bg::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse at center, transparent 0%, rgba(11, 31, 20, 0.4) 100%);
+          pointer-events: none;
+          z-index: 1;
+        }
+        
+        .bs-hero__orb {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(80px);
+          opacity: 0.5;
+        }
+        .bs-hero__orb--1 {
+          width: 600px; height: 600px;
+          background: radial-gradient(circle, var(--bs-gold) 0%, transparent 70%);
+          top: -200px; right: -150px;
+          opacity: 0.4;
+        }
+        .bs-hero__orb--2 {
+          width: 500px; height: 500px;
+          background: radial-gradient(circle, var(--bs-gold-soft) 0%, transparent 70%);
+          bottom: -150px; left: -100px;
+          opacity: 0.3;
+        }
+        .bs-hero__grid-lines {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+          background-size: 60px 60px;
+          mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+          z-index: 2;
+        }
+        
+        .bs-hero__inner {
+          position: relative;
+          z-index: 3;
+          text-align: center;
+          max-width: 880px;
+          margin: 0 auto;
+        }
+        
+        .bs-hero__badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 8px 18px;
+          background: var(--bs-glass);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255,255,255,0.15);
+          border-radius: 100px;
+          font-size: 13px;
+          font-weight: 500;
+          color: var(--bs-cream);
+          margin-bottom: 32px;
+        }
+        .bs-hero__badge-dot {
+          width: 8px; height: 8px;
+          border-radius: 50%;
+          background: #22c55e;
+          box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+          animation: bs-pulse 2s infinite;
+        }
+        @keyframes bs-pulse {
+          0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25); }
+          50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        }
+        
+        .bs-hero__title {
+          font-family: 'Syne', serif;
+          font-size: clamp(2.5rem, 6vw, 4.75rem);
+          font-weight: 800;
+          line-height: 1.05;
+          letter-spacing: -0.02em;
+          margin: 0 0 24px;
+          text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .bs-hero__title-accent {
+          background: linear-gradient(135deg, var(--bs-gold) 0%, var(--bs-gold-soft) 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+        }
+        
+        .bs-hero__subtitle {
+          font-size: clamp(1rem, 1.6vw, 1.2rem);
+          line-height: 1.65;
+          color: rgba(250, 247, 242, 0.85);
+          max-width: 640px;
+          margin: 0 auto 40px;
+          text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+        }
+        .bs-hero__subtitle strong {
+          color: var(--bs-cream);
+          font-weight: 600;
+        }
+        
+        .bs-hero__ctas {
+          display: flex;
+          gap: 14px;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: 56px;
+        }
+        
+        .bs-hero__proof {
+          display: inline-flex;
+          align-items: center;
+          gap: 16px;
+          padding: 14px 22px;
+          background: var(--bs-glass);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 100px;
+        }
+        .bs-hero__avatars { display: flex; }
+        .bs-avatar {
+          width: 36px; height: 36px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          color: var(--bs-cream);
+          font-weight: 700;
+          font-size: 12px;
+          border: 2px solid var(--bs-forest);
+          margin-left: -8px;
+        }
+        .bs-avatar:first-child { margin-left: 0; }
+        .bs-hero__proof-text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          font-size: 13px;
+          color: rgba(250, 247, 242, 0.85);
+        }
+        .bs-stars {
+          color: var(--bs-gold);
+          font-size: 14px;
+          letter-spacing: 2px;
+        }
+        
         /* ---------- BUTTONS ---------- */
         .bs-btn {
           display: inline-flex;
@@ -359,7 +322,7 @@
           color: var(--bs-muted);
           margin: 0;
         }
-        
+
         /* ---------- BRAND LOGOS ---------- */
         .bs-logos {
           padding: 60px 0;
@@ -388,13 +351,8 @@
           width: 120px;
           height: 30px;
         }
-        .bs-logos__item:hover {
-          opacity: 1;
-        }
-        .bs-logos__item svg {
-          width: 100%;
-          height: 100%;
-        }
+        .bs-logos__item:hover { opacity: 1; }
+        .bs-logos__item svg { width: 100%; height: 100%; }
         
         /* ---------- SECTION HEADS ---------- */
         .bs-section-head {
@@ -533,7 +491,7 @@
           font-weight: 700;
           align-self: center;
         }
-        
+
         /* ---------- RICH FEATURE SHOWCASE ---------- */
         .bs-showcase {
           padding: 100px 0;
@@ -562,21 +520,11 @@
           background: linear-gradient(160deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
           border-color: transparent;
         }
-        .bs-showcase__card--dark .bs-showcase__content h3 {
-          color: var(--bs-cream);
-        }
-        .bs-showcase__card--dark .bs-showcase__content p {
-          color: rgba(250, 247, 242, 0.78);
-        }
-        .bs-showcase__card--dark .bs-showcase__kicker {
-          color: var(--bs-gold);
-        }
-        .bs-showcase__card--dark .bs-showcase__stat strong {
-          color: var(--bs-cream);
-        }
-        .bs-showcase__card--dark .bs-showcase__stat span {
-          color: rgba(250, 247, 242, 0.6);
-        }
+        .bs-showcase__card--dark .bs-showcase__content h3 { color: var(--bs-cream); }
+        .bs-showcase__card--dark .bs-showcase__content p { color: rgba(250, 247, 242, 0.78); }
+        .bs-showcase__card--dark .bs-showcase__kicker { color: var(--bs-gold); }
+        .bs-showcase__card--dark .bs-showcase__stat strong { color: var(--bs-cream); }
+        .bs-showcase__card--dark .bs-showcase__stat span { color: rgba(250, 247, 242, 0.6); }
         
         .bs-showcase__media {
           position: relative;
@@ -584,18 +532,14 @@
           overflow: hidden;
           background: var(--bs-cream-2);
         }
-        .bs-showcase__media--small {
-          aspect-ratio: 16/9;
-        }
+        .bs-showcase__media--small { aspect-ratio: 16/9; }
         .bs-showcase__media img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           transition: transform 0.6s var(--bs-ease);
         }
-        .bs-showcase__card:hover .bs-showcase__media img {
-          transform: scale(1.05);
-        }
+        .bs-showcase__card:hover .bs-showcase__media img { transform: scale(1.05); }
         .bs-showcase__media-overlay {
           position: absolute;
           inset: 0;
@@ -619,13 +563,8 @@
           transition: all 0.3s var(--bs-ease);
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
-        .bs-play-btn:hover {
-          transform: scale(1.1);
-          background: #fff;
-        }
-        .bs-play-btn svg {
-          margin-left: 3px;
-        }
+        .bs-play-btn:hover { transform: scale(1.1); background: #fff; }
+        .bs-play-btn svg { margin-left: 3px; }
         .bs-showcase__badge {
           position: absolute;
           top: 16px;
@@ -676,10 +615,7 @@
           padding-top: 20px;
           border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .bs-showcase__stat {
-          display: flex;
-          flex-direction: column;
-        }
+        .bs-showcase__stat { display: flex; flex-direction: column; }
         .bs-showcase__stat strong {
           font-family: 'Syne', serif;
           font-size: 1.5rem;
@@ -692,7 +628,7 @@
           color: rgba(250, 247, 242, 0.6);
           margin-top: 4px;
         }
-        
+
         /* ---------- IMPACT STATS ---------- */
         .bs-impact {
           padding: 100px 0;
@@ -705,9 +641,7 @@
           gap: 64px;
           align-items: center;
         }
-        .bs-impact__visual {
-          position: relative;
-        }
+        .bs-impact__visual { position: relative; }
         .bs-impact__chart {
           position: relative;
           aspect-ratio: 2/1;
@@ -717,10 +651,7 @@
           padding: 24px;
           overflow: hidden;
         }
-        .bs-impact__svg {
-          width: 100%;
-          height: 100%;
-        }
+        .bs-impact__svg { width: 100%; height: 100%; }
         .bs-impact__line {
           stroke-dasharray: 1000;
           stroke-dashoffset: 1000;
@@ -730,12 +661,8 @@
           opacity: 0;
           animation: bs-fade-in 1s ease 1.5s forwards;
         }
-        @keyframes bs-draw-line {
-          to { stroke-dashoffset: 0; }
-        }
-        @keyframes bs-fade-in {
-          to { opacity: 1; }
-        }
+        @keyframes bs-draw-line { to { stroke-dashoffset: 0; } }
+        @keyframes bs-fade-in { to { opacity: 1; } }
         .bs-impact__dot-pulse {
           animation: bs-pulse-ring 2s infinite;
           transform-origin: center;
@@ -759,11 +686,7 @@
           flex-direction: column;
           gap: 2px;
         }
-        .bs-impact__floating-label {
-          font-size: 11px;
-          color: var(--bs-muted);
-          font-weight: 500;
-        }
+        .bs-impact__floating-label { font-size: 11px; color: var(--bs-muted); font-weight: 500; }
         .bs-impact__floating-value {
           font-family: 'Syne', serif;
           font-size: 1.3rem;
@@ -771,22 +694,14 @@
           color: var(--bs-forest);
           line-height: 1;
         }
-        .bs-impact__floating-change {
-          font-size: 12px;
-          color: #16a34a;
-          font-weight: 600;
-        }
+        .bs-impact__floating-change { font-size: 12px; color: #16a34a; font-weight: 600; }
         
         .bs-impact__numbers {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 24px;
         }
-        .bs-impact__number {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
+        .bs-impact__number { display: flex; flex-direction: column; gap: 6px; }
         .bs-impact__number strong {
           font-family: 'Syne', serif;
           font-size: 2.5rem;
@@ -797,11 +712,8 @@
           background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-        .bs-impact__number span {
-          font-size: 13px;
-          color: rgba(250, 247, 242, 0.7);
-        }
-        
+        .bs-impact__number span { font-size: 13px; color: rgba(250, 247, 242, 0.7); }
+
         /* ---------- WHY BUYSELL ---------- */
         .bs-why {
           padding: 100px 0;
@@ -820,10 +732,7 @@
           position: relative;
           transition: all 0.4s var(--bs-ease);
         }
-        .bs-why__card:hover {
-          transform: translateY(-6px);
-          box-shadow: var(--bs-shadow-lg);
-        }
+        .bs-why__card:hover { transform: translateY(-6px); box-shadow: var(--bs-shadow-lg); }
         .bs-why__card--featured {
           background: linear-gradient(160deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
           color: var(--bs-cream);
@@ -831,9 +740,7 @@
         }
         .bs-why__card--featured h3 { color: var(--bs-cream); }
         .bs-why__card--featured p { color: rgba(250, 247, 242, 0.78); }
-        .bs-why__card--featured .bs-why__card-icon {
-          background: rgba(234, 88, 12, 0.18);
-        }
+        .bs-why__card--featured .bs-why__card-icon { background: rgba(234, 88, 12, 0.18); }
         .bs-why__card-badge {
           position: absolute;
           top: 20px; right: 20px;
@@ -919,23 +826,15 @@
           font-weight: 700;
           color: var(--bs-forest);
         }
-        .bs-testimonial__author span {
-          font-size: 13px;
-          color: var(--bs-muted);
-        }
-        
+        .bs-testimonial__author span { font-size: 13px; color: var(--bs-muted); }
+
         /* ---------- FAQ ---------- */
         .bs-faq {
           padding: 100px 0;
           background: var(--bs-cream);
         }
-        .bs-faq__list {
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        .bs-faq__item {
-          border-bottom: 1px solid var(--bs-border);
-        }
+        .bs-faq__list { max-width: 800px; margin: 0 auto; }
+        .bs-faq__item { border-bottom: 1px solid var(--bs-border); }
         .bs-faq__trigger {
           width: 100%;
           background: none;
@@ -949,9 +848,7 @@
           text-align: left;
           transition: color 0.3s var(--bs-ease);
         }
-        .bs-faq__trigger:hover {
-          color: var(--bs-gold);
-        }
+        .bs-faq__trigger:hover { color: var(--bs-gold); }
         .bs-faq__trigger h3 {
           font-family: 'Syne', serif;
           font-size: 1.15rem;
@@ -961,9 +858,7 @@
           line-height: 1.3;
           transition: color 0.3s var(--bs-ease);
         }
-        .bs-faq__trigger:hover h3 {
-          color: var(--bs-gold);
-        }
+        .bs-faq__trigger:hover h3 { color: var(--bs-gold); }
         .bs-faq__icon {
           width: 36px;
           height: 36px;
@@ -974,10 +869,7 @@
           flex-shrink: 0;
           transition: all 0.4s var(--bs-ease);
         }
-        .bs-faq__icon svg {
-          width: 16px;
-          height: 16px;
-        }
+        .bs-faq__icon svg { width: 16px; height: 16px; }
         .bs-faq__icon svg rect {
           fill: var(--bs-cream);
           transition: transform 0.4s var(--bs-ease);
@@ -1000,10 +892,8 @@
           line-height: 1.65;
           margin: 0;
         }
-        .bs-faq__item.is-open .bs-faq__content {
-          max-height: 300px;
-        }
-        
+        .bs-faq__item.is-open .bs-faq__content { max-height: 300px; }
+
         /* ---------- FINAL CTA ---------- */
         .bs-final-cta {
           padding: 80px 0 120px;
@@ -1049,19 +939,13 @@
           margin: 0 auto 24px;
           animation: bs-bag-float 3s ease-in-out infinite;
         }
-        .bs-final-cta__bag svg {
-          width: 100%;
-          height: 100%;
-        }
+        .bs-final-cta__bag svg { width: 100%; height: 100%; }
         @keyframes bs-bag-float {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
         }
         
-        .bs-final-cta__form {
-          max-width: 480px;
-          margin: 0 auto;
-        }
+        .bs-final-cta__form { max-width: 480px; margin: 0 auto; }
         .bs-final-cta__input-wrap {
           display: flex;
           gap: 8px;
@@ -1088,9 +972,7 @@
           font-size: 15px;
           min-width: 0;
         }
-        .bs-final-cta__input-wrap input::placeholder {
-          color: rgba(250, 247, 242, 0.5);
-        }
+        .bs-final-cta__input-wrap input::placeholder { color: rgba(250, 247, 242, 0.5); }
         .bs-final-cta__form small {
           display: block;
           text-align: center;
@@ -1114,32 +996,40 @@
           background: rgba(250, 247, 242, 0.2);
           display: inline-block;
         }
-        .bs-final-cta__alt span:first-of-type {
-          width: auto;
-          background: none;
-        }
-        
+        .bs-final-cta__alt span:first-of-type { width: auto; background: none; }
+
         /* ============================================ */
         /* RESPONSIVE                                   */
         /* ============================================ */
-        @media (max-width: 960px) {
+        
+        /* Hero Mobile Overrides */
+        @media (max-width: 768px) {
+          .bs-hero {
+            background: 
+              linear-gradient(180deg, rgba(11, 31, 20, 0.94) 0%, rgba(11, 31, 20, 0.90) 100%),
+              url('images/hero-collage.jpg') center/cover no-repeat;
+            min-height: auto;
+            padding: 100px 0 80px;
+          }
+          .bs-hero__orb--1 { width: 400px; height: 400px; top: -100px; right: -80px; }
+          .bs-hero__orb--2 { width: 300px; height: 300px; bottom: -80px; left: -60px; }
+          
           .bs-trust__grid { grid-template-columns: repeat(2, 1fr); }
           .bs-why__grid { grid-template-columns: 1fr; }
-          .bs-how__flow.bs-active {
-            grid-template-columns: 1fr;
-            gap: 16px;
-          }
-          .bs-step__arrow {
-            transform: rotate(90deg);
-            padding: 4px 0;
-          }
+          .bs-how__flow.bs-active { grid-template-columns: 1fr; gap: 16px; }
+          .bs-step__arrow { transform: rotate(90deg); padding: 4px 0; }
           .bs-showcase__grid { grid-template-columns: 1fr; }
           .bs-impact__inner { grid-template-columns: 1fr; gap: 40px; }
           .bs-impact__number strong { font-size: 2rem; }
         }
-        
+
         @media (max-width: 640px) {
-          .bs-hero { padding: 90px 0 70px; }
+          .bs-hero {
+            background: 
+              linear-gradient(180deg, rgba(11, 31, 20, 0.96) 0%, rgba(11, 31, 20, 0.92) 100%),
+              url('images/hero-collage.jpg') center/cover no-repeat;
+            padding: 90px 0 70px;
+          }
           .bs-hero__ctas { flex-direction: column; align-items: stretch; }
           .bs-btn { justify-content: center; width: 100%; }
           .bs-hero__proof {
@@ -1166,14 +1056,8 @@
             padding: 12px;
             gap: 8px;
           }
-          .bs-final-cta__input-wrap input {
-            padding: 8px 0;
-            text-align: center;
-          }
-          .bs-final-cta__input-wrap .bs-btn {
-            width: 100%;
-            justify-content: center;
-          }
+          .bs-final-cta__input-wrap input { padding: 8px 0; text-align: center; }
+          .bs-final-cta__input-wrap .bs-btn { width: 100%; justify-content: center; }
         }
         
         /* Respect reduced motion */
@@ -1249,31 +1133,19 @@
       <div class="bs-trust__grid">
         <div class="bs-trust__item bs-reveal">
           <div class="bs-trust__icon">🔒</div>
-          <div>
-            <h4>Paystack Secure</h4>
-            <p>Bank-grade encrypted payments</p>
-          </div>
+          <div><h4>Paystack Secure</h4><p>Bank-grade encrypted payments</p></div>
         </div>
         <div class="bs-trust__item bs-reveal">
           <div class="bs-trust__icon">🛡️</div>
-          <div>
-            <h4>Buyer Protection</h4>
-            <p>100% money-back guarantee</p>
-          </div>
+          <div><h4>Buyer Protection</h4><p>100% money-back guarantee</p></div>
         </div>
         <div class="bs-trust__item bs-reveal">
           <div class="bs-trust__icon">🚚</div>
-          <div>
-            <h4>2–5 Day Delivery</h4>
-            <p>Nationwide logistics network</p>
-          </div>
+          <div><h4>2–5 Day Delivery</h4><p>Nationwide logistics network</p></div>
         </div>
         <div class="bs-trust__item bs-reveal">
           <div class="bs-trust__icon">✨</div>
-          <div>
-            <h4>Verified Sellers</h4>
-            <p>KYC-checked merchants only</p>
-          </div>
+          <div><h4>Verified Sellers</h4><p>KYC-checked merchants only</p></div>
         </div>
       </div>
     </div>
@@ -1284,24 +1156,12 @@
     <div class="bs-container">
       <p class="bs-logos__label bs-reveal">Trusted by Nigeria's leading brands & partners</p>
       <div class="bs-logos__track bs-reveal">
-        <div class="bs-logos__item">
-          <svg viewBox="0 0 120 30" aria-label="Paystack"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="20" fill="#0b1f14">Paystack</text></svg>
-        </div>
-        <div class="bs-logos__item">
-          <svg viewBox="0 0 140 30" aria-label="GIG Logistics"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">GIG Logistics</text></svg>
-        </div>
-        <div class="bs-logos__item">
-          <svg viewBox="0 0 120 30" aria-label="Flutterwave"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">Flutterwave</text></svg>
-        </div>
-        <div class="bs-logos__item">
-          <svg viewBox="0 0 100 30" aria-label="DHL"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="22" fill="#0b1f14">DHL</text></svg>
-        </div>
-        <div class="bs-logos__item">
-          <svg viewBox="0 0 140 30" aria-label="Interswitch"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">Interswitch</text></svg>
-        </div>
-        <div class="bs-logos__item">
-          <svg viewBox="0 0 120 30" aria-label="Kora"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="20" fill="#0b1f14">Kora</text></svg>
-        </div>
+        <div class="bs-logos__item"><svg viewBox="0 0 120 30" aria-label="Paystack"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="20" fill="#0b1f14">Paystack</text></svg></div>
+        <div class="bs-logos__item"><svg viewBox="0 0 140 30" aria-label="GIG Logistics"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">GIG Logistics</text></svg></div>
+        <div class="bs-logos__item"><svg viewBox="0 0 120 30" aria-label="Flutterwave"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">Flutterwave</text></svg></div>
+        <div class="bs-logos__item"><svg viewBox="0 0 100 30" aria-label="DHL"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="22" fill="#0b1f14">DHL</text></svg></div>
+        <div class="bs-logos__item"><svg viewBox="0 0 140 30" aria-label="Interswitch"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">Interswitch</text></svg></div>
+        <div class="bs-logos__item"><svg viewBox="0 0 120 30" aria-label="Kora"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="20" fill="#0b1f14">Kora</text></svg></div>
       </div>
     </div>
   </section>
@@ -1409,14 +1269,8 @@
             <h3>Your money is safe until delivery</h3>
             <p>Paystack holds payments in escrow. Sellers only get paid when you confirm receipt. No more "what I ordered vs what I got."</p>
             <div class="bs-showcase__stats">
-              <div class="bs-showcase__stat">
-                <strong>₦0</strong>
-                <span>Lost to scams</span>
-              </div>
-              <div class="bs-showcase__stat">
-                <strong>100%</strong>
-                <span>Money-back guarantee</span>
-              </div>
+              <div class="bs-showcase__stat"><strong>₦0</strong><span>Lost to scams</span></div>
+              <div class="bs-showcase__stat"><strong>100%</strong><span>Money-back guarantee</span></div>
             </div>
           </div>
         </div>
@@ -1478,18 +1332,9 @@
           <h2 class="bs-section-title" style="text-align:left">Nigerians are earning real money on BUYSELL</h2>
           <p style="color:rgba(250,247,242,0.78); font-size:1.05rem; line-height:1.6; margin:0 0 32px">Our sellers aren't just making sales — they're building sustainable businesses with tools designed for this market.</p>
           <div class="bs-impact__numbers">
-            <div class="bs-impact__number">
-              <strong data-count="10000">0</strong>
-              <span>Verified Sellers</span>
-            </div>
-            <div class="bs-impact__number">
-              <strong data-count="250000">0</strong>
-              <span>Orders Delivered</span>
-            </div>
-            <div class="bs-impact__number">
-              <strong data-count="47">0</strong>
-              <span>States Covered</span>
-            </div>
+            <div class="bs-impact__number"><strong data-count="10000">0</strong><span>Verified Sellers</span></div>
+            <div class="bs-impact__number"><strong data-count="250000">0</strong><span>Orders Delivered</span></div>
+            <div class="bs-impact__number"><strong data-count="47">0</strong><span>States Covered</span></div>
           </div>
         </div>
       </div>
@@ -1541,10 +1386,7 @@
           <p class="bs-testimonial__quote">"I was scared to buy sneakers online after my last Instagram experience. BUYSELL held my money until the shoes arrived — exactly as pictured. This is how commerce should work."</p>
           <div class="bs-testimonial__author">
             <div class="bs-avatar" style="background:#ea580c">AD</div>
-            <div>
-              <strong>Adaeze O.</strong>
-              <span>Buyer · Lagos</span>
-            </div>
+            <div><strong>Adaeze O.</strong><span>Buyer · Lagos</span></div>
           </div>
         </div>
 
@@ -1553,10 +1395,7 @@
           <p class="bs-testimonial__quote">"In 3 weeks, I got 47 WhatsApp leads from serious buyers. No more 'is this available?' DMs that go nowhere. My revenue doubled. The escrow system builds trust I couldn't build alone."</p>
           <div class="bs-testimonial__author">
             <div class="bs-avatar" style="background:#0b1f14">EM</div>
-            <div>
-              <strong>Emeka M.</strong>
-              <span>Vendor · Abuja</span>
-            </div>
+            <div><strong>Emeka M.</strong><span>Vendor · Abuja</span></div>
           </div>
         </div>
 
@@ -1565,10 +1404,7 @@
           <p class="bs-testimonial__quote">"The video listing feature is a game-changer. Customers see the actual product, ask better questions, and conversion went from 2% to 11%. Best decision I made for my thrift business."</p>
           <div class="bs-testimonial__author">
             <div class="bs-avatar" style="background:#d4a574">FK</div>
-            <div>
-              <strong>Funke K.</strong>
-              <span>Vendor · Port Harcourt</span>
-            </div>
+            <div><strong>Funke K.</strong><span>Vendor · Port Harcourt</span></div>
           </div>
         </div>
 
@@ -1577,10 +1413,7 @@
           <p class="bs-testimonial__quote">"Ordered a phone from a seller in Kano, delivered to Enugu in 3 days. Paystack checkout was smooth, and the buyer protection gave me peace of mind. Finally, a Nigerian marketplace that works."</p>
           <div class="bs-testimonial__author">
             <div class="bs-avatar" style="background:#1a3a2a">CN</div>
-            <div>
-              <strong>Chidi N.</strong>
-              <span>Buyer · Enugu</span>
-            </div>
+            <div><strong>Chidi N.</strong><span>Buyer · Enugu</span></div>
           </div>
         </div>
       </div>
@@ -1599,61 +1432,41 @@
         <div class="bs-faq__item">
           <button class="bs-faq__trigger" aria-expanded="false">
             <h3>How does BUYSELL protect me from scams?</h3>
-            <span class="bs-faq__icon">
-              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
-            </span>
+            <span class="bs-faq__icon"><svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg></span>
           </button>
-          <div class="bs-faq__content">
-            <p>Every transaction is protected by our escrow system powered by Paystack. When you pay, the money is held securely until you confirm you've received your item in the condition described. If there's an issue, you get a full refund — no questions asked.</p>
-          </div>
+          <div class="bs-faq__content"><p>Every transaction is protected by our escrow system powered by Paystack. When you pay, the money is held securely until you confirm you've received your item in the condition described. If there's an issue, you get a full refund — no questions asked.</p></div>
         </div>
 
         <div class="bs-faq__item">
           <button class="bs-faq__trigger" aria-expanded="false">
             <h3>Is it really free to start selling?</h3>
-            <span class="bs-faq__icon">
-              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
-            </span>
+            <span class="bs-faq__icon"><svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg></span>
           </button>
-          <div class="bs-faq__content">
-            <p>Yes! Your first month is completely free — no credit card required. You get full access to all features including video listings, WhatsApp lead integration, and escrow protection. After that, plans start at just ₦5,000/month.</p>
-          </div>
+          <div class="bs-faq__content"><p>Yes! Your first month is completely free — no credit card required. You get full access to all features including video listings, WhatsApp lead integration, and escrow protection. After that, plans start at just ₦5,000/month.</p></div>
         </div>
 
         <div class="bs-faq__item">
           <button class="bs-faq__trigger" aria-expanded="false">
             <h3>How fast is delivery across Nigeria?</h3>
-            <span class="bs-faq__icon">
-              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
-            </span>
+            <span class="bs-faq__icon"><svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg></span>
           </button>
-          <div class="bs-faq__content">
-            <p>Most deliveries within Lagos arrive in 24 hours. Nationwide delivery takes 2–5 business days depending on location. We partner with GIG Logistics, DHL, and trusted local couriers. Every order includes real-time tracking.</p>
-          </div>
+          <div class="bs-faq__content"><p>Most deliveries within Lagos arrive in 24 hours. Nationwide delivery takes 2–5 business days depending on location. We partner with GIG Logistics, DHL, and trusted local couriers. Every order includes real-time tracking.</p></div>
         </div>
 
         <div class="bs-faq__item">
           <button class="bs-faq__trigger" aria-expanded="false">
             <h3>Do I need to be a tech expert to use BUYSELL?</h3>
-            <span class="bs-faq__icon">
-              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
-            </span>
+            <span class="bs-faq__icon"><svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg></span>
           </button>
-          <div class="bs-faq__content">
-            <p>Not at all. If you can use Instagram or WhatsApp, you can use BUYSELL. Our store builder takes under 5 minutes, and our support team is available 24/7 via live chat. We also have video tutorials in English, Pidgin, and Yoruba.</p>
-          </div>
+          <div class="bs-faq__content"><p>Not at all. If you can use Instagram or WhatsApp, you can use BUYSELL. Our store builder takes under 5 minutes, and our support team is available 24/7 via live chat. We also have video tutorials in English, Pidgin, and Yoruba.</p></div>
         </div>
 
         <div class="bs-faq__item">
           <button class="bs-faq__trigger" aria-expanded="false">
             <h3>What payment methods do you support?</h3>
-            <span class="bs-faq__icon">
-              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
-            </span>
+            <span class="bs-faq__icon"><svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg></span>
           </button>
-          <div class="bs-faq__content">
-            <p>We support all major Nigerian payment methods: debit/credit cards, bank transfers, USSD, and mobile money. All payments are processed securely through Paystack, which is PCI-DSS compliant and trusted by thousands of Nigerian businesses.</p>
-          </div>
+          <div class="bs-faq__content"><p>We support all major Nigerian payment methods: debit/credit cards, bank transfers, USSD, and mobile money. All payments are processed securely through Paystack, which is PCI-DSS compliant and trusted by thousands of Nigerian businesses.</p></div>
         </div>
       </div>
     </div>
