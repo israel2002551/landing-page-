@@ -63,14 +63,14 @@
           transform: translateY(0);
         }
 
-        /* ---------- HERO (WITH BACKGROUND IMAGE) ---------- */
+        /* ---------- HERO WITH BACKGROUND IMAGE ---------- */
         .bs-hero {
           position: relative;
-          padding: 120px 0 100px;
-          /* NOTE: Ensure you have 'images/hero-collage.jpg' in your project folder */
+          padding: 140px 0 120px;
+          /* Background image with dark overlay */
           background: 
-            linear-gradient(180deg, rgba(11, 31, 20, 0.88) 0%, rgba(11, 31, 20, 0.82) 100%),
-            url('images/hero-collage.jpg') center/cover no-repeat;
+            linear-gradient(180deg, rgba(11, 31, 20, 0.92) 0%, rgba(11, 31, 20, 0.85) 100%),
+            url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80') center/cover no-repeat;
           color: var(--bs-cream);
           overflow: hidden;
           isolation: isolate;
@@ -79,14 +79,7 @@
           align-items: center;
         }
         
-        .bs-hero__bg {
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          pointer-events: none;
-        }
-        
-        /* Vignette Effect */
+        /* Vignette effect to focus attention on center */
         .bs-hero__bg::after {
           content: '';
           position: absolute;
@@ -94,6 +87,13 @@
           background: radial-gradient(ellipse at center, transparent 0%, rgba(11, 31, 20, 0.4) 100%);
           pointer-events: none;
           z-index: 1;
+        }
+        
+        .bs-hero__bg {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
         }
         
         .bs-hero__orb {
@@ -1006,8 +1006,8 @@
         @media (max-width: 768px) {
           .bs-hero {
             background: 
-              linear-gradient(180deg, rgba(11, 31, 20, 0.94) 0%, rgba(11, 31, 20, 0.90) 100%),
-              url('images/hero-collage.jpg') center/cover no-repeat;
+              linear-gradient(180deg, rgba(11, 31, 20, 0.95) 0%, rgba(11, 31, 20, 0.90) 100%),
+              url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80') center/cover no-repeat;
             min-height: auto;
             padding: 100px 0 80px;
           }
@@ -1026,8 +1026,8 @@
         @media (max-width: 640px) {
           .bs-hero {
             background: 
-              linear-gradient(180deg, rgba(11, 31, 20, 0.96) 0%, rgba(11, 31, 20, 0.92) 100%),
-              url('images/hero-collage.jpg') center/cover no-repeat;
+              linear-gradient(180deg, rgba(11, 31, 20, 0.97) 0%, rgba(11, 31, 20, 0.93) 100%),
+              url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80') center/cover no-repeat;
             padding: 90px 0 70px;
           }
           .bs-hero__ctas { flex-direction: column; align-items: stretch; }
@@ -1132,7 +1132,7 @@
     <div class="bs-container">
       <div class="bs-trust__grid">
         <div class="bs-trust__item bs-reveal">
-          <div class="bs-trust__icon">🔒</div>
+          <div class="bs-trust__icon"></div>
           <div><h4>Paystack Secure</h4><p>Bank-grade encrypted payments</p></div>
         </div>
         <div class="bs-trust__item bs-reveal">
@@ -1140,7 +1140,7 @@
           <div><h4>Buyer Protection</h4><p>100% money-back guarantee</p></div>
         </div>
         <div class="bs-trust__item bs-reveal">
-          <div class="bs-trust__icon">🚚</div>
+          <div class="bs-trust__icon"></div>
           <div><h4>2–5 Day Delivery</h4><p>Nationwide logistics network</p></div>
         </div>
         <div class="bs-trust__item bs-reveal">
@@ -1184,7 +1184,7 @@
       <div class="bs-how__flow bs-active" data-flow="buyer">
         <div class="bs-step bs-reveal">
           <div class="bs-step__num">01</div>
-          <div class="bs-step__icon">🔍</div>
+          <div class="bs-step__icon"></div>
           <h3>Browse & Discover</h3>
           <p>Explore thousands of verified products from trusted Nigerian sellers — from fashion to electronics.</p>
         </div>
@@ -1322,7 +1322,7 @@
             </svg>
             <div class="bs-impact__floating-card">
               <span class="bs-impact__floating-label">Monthly GMV</span>
-              <strong class="bs-impact__floating-value">₦47.2M</strong>
+              <strong class="bs-impact__floating-value">47.2M</strong>
               <span class="bs-impact__floating-change">↑ 34%</span>
             </div>
           </div>
@@ -1364,7 +1364,7 @@
         </div>
 
         <div class="bs-why__card bs-reveal">
-          <div class="bs-why__card-icon">🎁</div>
+          <div class="bs-why__card-icon"></div>
           <h3>1 Month Free for Entrepreneurs</h3>
           <p>Launch your store with zero upfront cost. Full features, full support, full escrow protection — your first 30 days are on us.</p>
         </div>
