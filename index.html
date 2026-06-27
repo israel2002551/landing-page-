@@ -1,662 +1,1138 @@
-<!-- ============================================ -->
-<!-- BUYSELL NIGERIA — MARKETING LANDING PAGE     -->
-<!-- ============================================ -->
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>BUYSELL Nigeria</title>
-      <style>
-        /* Paste ALL the CSS I provided in the previous response */
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BUYSELL Nigeria - Buy & Sell With Confidence</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
         /* ============================================ */
-/* BUYSELL NIGERIA — LANDING PAGE STYLES        */
-/* ============================================ */
-
-/* ---------- FONTS ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
-
-/* ---------- VARIABLES ---------- */
-:root {
-  --bs-forest: #0b1f14;
-  --bs-forest-2: #143024;
-  --bs-forest-3: #1a3a2a;
-  --bs-gold: #ea580c;
-  --bs-gold-soft: #d4a574;
-  --bs-gold-glow: rgba(234, 88, 12, 0.35);
-  --bs-cream: #faf7f2;
-  --bs-cream-2: #f3ede2;
-  --bs-ink: #0a0f0c;
-  --bs-muted: #6b7a72;
-  --bs-border: rgba(11, 31, 20, 0.08);
-  --bs-glass: rgba(255, 255, 255, 0.65);
-  --bs-radius: 18px;
-  --bs-radius-lg: 28px;
-  --bs-shadow-sm: 0 2px 8px rgba(11, 31, 20, 0.06);
-  --bs-shadow-md: 0 10px 30px rgba(11, 31, 20, 0.08);
-  --bs-shadow-lg: 0 25px 60px rgba(11, 31, 20, 0.12);
-  --bs-ease: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* ---------- BASE ---------- */
-.bs-landing {
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-  color: var(--bs-ink);
-  background: var(--bs-cream);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-.bs-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ---------- REVEAL ANIMATION ---------- */
-.bs-reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.9s var(--bs-ease), transform 0.9s var(--bs-ease);
-}
-.bs-reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---------- HERO ---------- */
-.bs-hero {
-  position: relative;
-  padding: 120px 0 100px;
-  background: linear-gradient(180deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
-  color: var(--bs-cream);
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.bs-hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.bs-hero__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-}
-.bs-hero__orb--1 {
-  width: 500px; height: 500px;
-  background: var(--bs-gold);
-  top: -150px; right: -100px;
-  opacity: 0.25;
-}
-.bs-hero__orb--2 {
-  width: 400px; height: 400px;
-  background: var(--bs-gold-soft);
-  bottom: -100px; left: -100px;
-  opacity: 0.15;
-}
-.bs-hero__grid-lines {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-}
-
-.bs-hero__inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 880px;
-}
-
-.bs-hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 18px;
-  background: var(--bs-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--bs-cream);
-  margin-bottom: 32px;
-}
-.bs-hero__badge-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-  animation: bs-pulse 2s infinite;
-}
-@keyframes bs-pulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25); }
-  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-}
-
-.bs-hero__title {
-  font-family: 'Syne', serif;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0 0 24px;
-}
-.bs-hero__title-accent {
-  background: linear-gradient(135deg, var(--bs-gold) 0%, var(--bs-gold-soft) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.bs-hero__subtitle {
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  line-height: 1.65;
-  color: rgba(250, 247, 242, 0.78);
-  max-width: 640px;
-  margin: 0 auto 40px;
-}
-.bs-hero__subtitle strong {
-  color: var(--bs-cream);
-  font-weight: 600;
-}
-
-.bs-hero__ctas {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 56px;
-}
-
-.bs-hero__proof {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 22px;
-  background: var(--bs-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 100px;
-}
-.bs-hero__avatars {
-  display: flex;
-}
-.bs-avatar {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--bs-cream);
-  font-weight: 700;
-  font-size: 12px;
-  border: 2px solid var(--bs-forest);
-  margin-left: -8px;
-}
-.bs-avatar:first-child { margin-left: 0; }
-.bs-hero__proof-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 13px;
-  color: rgba(250, 247, 242, 0.85);
-}
-.bs-stars {
-  color: var(--bs-gold);
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-
-/* ---------- BUTTONS ---------- */
-.bs-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 28px;
-  border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.35s var(--bs-ease);
-  white-space: nowrap;
-}
-.bs-btn--primary {
-  background: linear-gradient(135deg, var(--bs-gold) 0%, #c2410c 100%);
-  color: #fff;
-  box-shadow: 0 10px 30px var(--bs-gold-glow), inset 0 1px 0 rgba(255,255,255,0.2);
-}
-.bs-btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 40px var(--bs-gold-glow), inset 0 1px 0 rgba(255,255,255,0.25);
-}
-.bs-btn--primary svg { transition: transform 0.35s var(--bs-ease); }
-.bs-btn--primary:hover svg { transform: translateX(4px); }
-
-.bs-btn--ghost {
-  background: rgba(255,255,255,0.08);
-  color: var(--bs-cream);
-  border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.bs-btn--ghost:hover {
-  background: rgba(255,255,255,0.15);
-  transform: translateY(-2px);
-}
-
-/* ---------- TRUST PILLARS ---------- */
-.bs-trust {
-  padding: 60px 0;
-  background: var(--bs-cream);
-  border-bottom: 1px solid var(--bs-border);
-}
-.bs-trust__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-.bs-trust__item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid var(--bs-border);
-  border-radius: var(--bs-radius);
-  transition: all 0.35s var(--bs-ease);
-}
-.bs-trust__item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--bs-shadow-md);
-  border-color: var(--bs-gold-soft);
-}
-.bs-trust__icon {
-  font-size: 28px;
-  width: 52px; height: 52px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--bs-forest) 0%, var(--bs-forest-3) 100%);
-  border-radius: 14px;
-  flex-shrink: 0;
-}
-.bs-trust__item h4 {
-  font-family: 'Syne', serif;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0 0 2px;
-  color: var(--bs-forest);
-}
-.bs-trust__item p {
-  font-size: 13px;
-  color: var(--bs-muted);
-  margin: 0;
-}
-
-/* ---------- SECTION HEADS ---------- */
-.bs-section-head {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 56px;
-}
-.bs-eyebrow {
-  display: inline-block;
-  padding: 6px 14px;
-  background: rgba(234, 88, 12, 0.1);
-  color: var(--bs-gold);
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-.bs-section-title {
-  font-family: 'Syne', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--bs-forest);
-  margin: 0 0 16px;
-}
-.bs-section-sub {
-  font-size: 1.05rem;
-  color: var(--bs-muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* ---------- HOW IT WORKS ---------- */
-.bs-how {
-  padding: 100px 0;
-  background: var(--bs-cream);
-}
-.bs-how__toggle {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 48px;
-  padding: 6px;
-  background: #fff;
-  border: 1px solid var(--bs-border);
-  border-radius: 100px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-.bs-how__tab {
-  padding: 12px 28px;
-  border: none;
-  background: transparent;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--bs-muted);
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.3s var(--bs-ease);
-}
-.bs-how__tab.bs-active {
-  background: var(--bs-forest);
-  color: var(--bs-cream);
-  box-shadow: var(--bs-shadow-sm);
-}
-
-.bs-how__flow {
-  display: none;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: stretch;
-  gap: 20px;
-}
-.bs-how__flow.bs-active {
-  display: grid;
-  animation: bs-fadeIn 0.5s var(--bs-ease);
-}
-@keyframes bs-fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.bs-step {
-  background: #fff;
-  border: 1px solid var(--bs-border);
-  border-radius: var(--bs-radius-lg);
-  padding: 36px 28px;
-  text-align: center;
-  position: relative;
-  transition: all 0.4s var(--bs-ease);
-}
-.bs-step:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--bs-shadow-lg);
-  border-color: var(--bs-gold-soft);
-}
-.bs-step__num {
-  font-family: 'Syne', serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--bs-gold);
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
-}
-.bs-step__icon {
-  font-size: 42px;
-  width: 80px; height: 80px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, rgba(234, 88, 12, 0.08), rgba(212, 165, 116, 0.12));
-  border-radius: 22px;
-  margin: 0 auto 20px;
-}
-.bs-step h3 {
-  font-family: 'Syne', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--bs-forest);
-  margin: 0 0 10px;
-}
-.bs-step p {
-  font-size: 0.95rem;
-  color: var(--bs-muted);
-  line-height: 1.6;
-  margin: 0;
-}
-.bs-step__arrow {
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  color: var(--bs-gold);
-  font-weight: 700;
-  align-self: center;
-}
-
-/* ---------- WHY BUYSELL ---------- */
-.bs-why {
-  padding: 100px 0;
-  background: linear-gradient(180deg, var(--bs-cream) 0%, var(--bs-cream-2) 100%);
-}
-.bs-why__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.bs-why__card {
-  background: #fff;
-  border: 1px solid var(--bs-border);
-  border-radius: var(--bs-radius-lg);
-  padding: 36px 30px;
-  position: relative;
-  transition: all 0.4s var(--bs-ease);
-}
-.bs-why__card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--bs-shadow-lg);
-}
-.bs-why__card--featured {
-  background: linear-gradient(160deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
-  color: var(--bs-cream);
-  border-color: transparent;
-}
-.bs-why__card--featured h3 { color: var(--bs-cream); }
-.bs-why__card--featured p { color: rgba(250, 247, 242, 0.78); }
-.bs-why__card--featured .bs-why__card-icon {
-  background: rgba(234, 88, 12, 0.18);
-}
-.bs-why__card-badge {
-  position: absolute;
-  top: 20px; right: 20px;
-  padding: 5px 12px;
-  background: var(--bs-gold);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border-radius: 100px;
-}
-.bs-why__card-icon {
-  font-size: 32px;
-  width: 64px; height: 64px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), rgba(212, 165, 116, 0.15));
-  border-radius: 18px;
-  margin-bottom: 22px;
-}
-.bs-why__card h3 {
-  font-family: 'Syne', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--bs-forest);
-  margin: 0 0 12px;
-  line-height: 1.3;
-}
-.bs-why__card p {
-  font-size: 0.95rem;
-  color: var(--bs-muted);
-  line-height: 1.65;
-  margin: 0;
-}
-
-/* ---------- TESTIMONIALS ---------- */
-.bs-testimonials {
-  padding: 100px 0;
-  background: var(--bs-cream);
-}
-.bs-testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.bs-testimonial {
-  background: #fff;
-  border: 1px solid var(--bs-border);
-  border-radius: var(--bs-radius-lg);
-  padding: 32px;
-  transition: all 0.4s var(--bs-ease);
-}
-.bs-testimonial:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--bs-shadow-md);
-  border-color: var(--bs-gold-soft);
-}
-.bs-testimonial__stars {
-  color: var(--bs-gold);
-  font-size: 16px;
-  letter-spacing: 3px;
-  margin-bottom: 16px;
-}
-.bs-testimonial__quote {
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--bs-ink);
-  margin: 0 0 24px;
-  font-style: italic;
-}
-.bs-testimonial__author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding-top: 20px;
-  border-top: 1px solid var(--bs-border);
-}
-.bs-testimonial__author strong {
-  display: block;
-  font-family: 'Syne', serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--bs-forest);
-}
-.bs-testimonial__author span {
-  font-size: 13px;
-  color: var(--bs-muted);
-}
-
-/* ---------- FINAL CTA ---------- */
-.bs-final-cta {
-  padding: 80px 0 120px;
-  background: var(--bs-cream);
-}
-.bs-final-cta__inner {
-  background: linear-gradient(160deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
-  color: var(--bs-cream);
-  border-radius: var(--bs-radius-lg);
-  padding: 80px 40px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-.bs-final-cta__inner::before {
-  content: '';
-  position: absolute;
-  width: 400px; height: 400px;
-  background: var(--bs-gold);
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.2;
-  top: -150px; right: -100px;
-  z-index: -1;
-}
-.bs-final-cta__inner h2 {
-  font-family: 'Syne', serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.15;
-  margin: 0 0 16px;
-  letter-spacing: -0.02em;
-}
-.bs-final-cta__inner p {
-  font-size: 1.05rem;
-  color: rgba(250, 247, 242, 0.78);
-  margin: 0 0 36px;
-}
-.bs-final-cta__buttons {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ============================================ */
-/* RESPONSIVE                                   */
-/* ============================================ */
-@media (max-width: 960px) {
-  .bs-trust__grid { grid-template-columns: repeat(2, 1fr); }
-  .bs-why__grid { grid-template-columns: 1fr; }
-  .bs-how__flow.bs-active {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .bs-step__arrow {
-    transform: rotate(90deg);
-    padding: 4px 0;
-  }
-}
-
-@media (max-width: 640px) {
-  .bs-hero { padding: 90px 0 70px; }
-  .bs-hero__ctas { flex-direction: column; align-items: stretch; }
-  .bs-btn { justify-content: center; width: 100%; }
-  .bs-hero__proof {
-    flex-direction: column;
-    gap: 10px;
-    padding: 16px;
-    width: 100%;
-  }
-  .bs-hero__proof-text { align-items: center; text-align: center; }
-  .bs-trust__grid { grid-template-columns: 1fr; }
-  .bs-trust__item { padding: 16px; }
-  .bs-testimonials__grid { grid-template-columns: 1fr; }
-  .bs-how__toggle { width: 100%; }
-  .bs-how__tab { flex: 1; padding: 12px 16px; }
-  .bs-section-head { margin-bottom: 40px; }
-  .bs-final-cta__inner { padding: 56px 24px; }
-  .bs-final-cta__buttons { flex-direction: column; }
-  .bs-step { padding: 28px 20px; }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .bs-reveal { opacity: 1; transform: none; transition: none; }
-  .bs-btn, .bs-step, .bs-trust__item, .bs-why__card, .bs-testimonial { transition: none; }
-}
+        /* BUYSELL NIGERIA - COMPLETE STYLES            */
+        /* ============================================ */
+        
+        /* ---------- VARIABLES ---------- */
+        :root {
+          --bs-forest: #0b1f14;
+          --bs-forest-2: #143024;
+          --bs-forest-3: #1a3a2a;
+          --bs-gold: #ea580c;
+          --bs-gold-soft: #d4a574;
+          --bs-gold-glow: rgba(234, 88, 12, 0.35);
+          --bs-cream: #faf7f2;
+          --bs-cream-2: #f3ede2;
+          --bs-ink: #0a0f0c;
+          --bs-muted: #6b7a72;
+          --bs-border: rgba(11, 31, 20, 0.08);
+          --bs-glass: rgba(255, 255, 255, 0.65);
+          --bs-radius: 18px;
+          --bs-radius-lg: 28px;
+          --bs-shadow-sm: 0 2px 8px rgba(11, 31, 20, 0.06);
+          --bs-shadow-md: 0 10px 30px rgba(11, 31, 20, 0.08);
+          --bs-shadow-lg: 0 25px 60px rgba(11, 31, 20, 0.12);
+          --bs-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        /* ---------- BASE ---------- */
+        .bs-landing {
+          font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+          color: var(--bs-ink);
+          background: var(--bs-cream);
+          overflow-x: hidden;
+          -webkit-font-smoothing: antialiased;
+        }
+        
+        .bs-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 24px;
+        }
+        
+        /* ---------- REVEAL ANIMATION ---------- */
+        .bs-reveal {
+          opacity: 0;
+          transform: translateY(28px);
+          transition: opacity 0.9s var(--bs-ease), transform 0.9s var(--bs-ease);
+        }
+        .bs-reveal.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        /* ---------- HERO ---------- */
+        .bs-hero {
+          position: relative;
+          padding: 120px 0 100px;
+          background: linear-gradient(180deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
+          color: var(--bs-cream);
+          overflow: hidden;
+          isolation: isolate;
+        }
+        
+        .bs-hero__bg {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+        }
+        
+        .bs-hero__orb {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(80px);
+          opacity: 0.5;
+        }
+        .bs-hero__orb--1 {
+          width: 500px; height: 500px;
+          background: var(--bs-gold);
+          top: -150px; right: -100px;
+          opacity: 0.25;
+        }
+        .bs-hero__orb--2 {
+          width: 400px; height: 400px;
+          background: var(--bs-gold-soft);
+          bottom: -100px; left: -100px;
+          opacity: 0.15;
+        }
+        .bs-hero__grid-lines {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+          background-size: 60px 60px;
+          mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+        }
+        
+        .bs-hero__inner {
+          position: relative;
+          z-index: 1;
+          text-align: center;
+          max-width: 880px;
+        }
+        
+        .bs-hero__badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 8px 18px;
+          background: var(--bs-glass);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255,255,255,0.15);
+          border-radius: 100px;
+          font-size: 13px;
+          font-weight: 500;
+          color: var(--bs-cream);
+          margin-bottom: 32px;
+        }
+        .bs-hero__badge-dot {
+          width: 8px; height: 8px;
+          border-radius: 50%;
+          background: #22c55e;
+          box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+          animation: bs-pulse 2s infinite;
+        }
+        @keyframes bs-pulse {
+          0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25); }
+          50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        }
+        
+        .bs-hero__title {
+          font-family: 'Syne', serif;
+          font-size: clamp(2.5rem, 6vw, 4.75rem);
+          font-weight: 800;
+          line-height: 1.05;
+          letter-spacing: -0.02em;
+          margin: 0 0 24px;
+        }
+        .bs-hero__title-accent {
+          background: linear-gradient(135deg, var(--bs-gold) 0%, var(--bs-gold-soft) 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+        }
+        
+        .bs-hero__subtitle {
+          font-size: clamp(1rem, 1.6vw, 1.2rem);
+          line-height: 1.65;
+          color: rgba(250, 247, 242, 0.78);
+          max-width: 640px;
+          margin: 0 auto 40px;
+        }
+        .bs-hero__subtitle strong {
+          color: var(--bs-cream);
+          font-weight: 600;
+        }
+        
+        .bs-hero__ctas {
+          display: flex;
+          gap: 14px;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: 56px;
+        }
+        
+        .bs-hero__proof {
+          display: inline-flex;
+          align-items: center;
+          gap: 16px;
+          padding: 14px 22px;
+          background: var(--bs-glass);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 100px;
+        }
+        .bs-hero__avatars {
+          display: flex;
+        }
+        .bs-avatar {
+          width: 36px; height: 36px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          color: var(--bs-cream);
+          font-weight: 700;
+          font-size: 12px;
+          border: 2px solid var(--bs-forest);
+          margin-left: -8px;
+        }
+        .bs-avatar:first-child { margin-left: 0; }
+        .bs-hero__proof-text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          font-size: 13px;
+          color: rgba(250, 247, 242, 0.85);
+        }
+        .bs-stars {
+          color: var(--bs-gold);
+          font-size: 14px;
+          letter-spacing: 2px;
+        }
+        
+        /* ---------- BUTTONS ---------- */
+        .bs-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 16px 28px;
+          border-radius: 100px;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 15px;
+          font-weight: 600;
+          text-decoration: none;
+          cursor: pointer;
+          border: none;
+          transition: all 0.35s var(--bs-ease);
+          white-space: nowrap;
+        }
+        .bs-btn--primary {
+          background: linear-gradient(135deg, var(--bs-gold) 0%, #c2410c 100%);
+          color: #fff;
+          box-shadow: 0 10px 30px var(--bs-gold-glow), inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .bs-btn--primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 40px var(--bs-gold-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+        }
+        .bs-btn--primary svg { transition: transform 0.35s var(--bs-ease); }
+        .bs-btn--primary:hover svg { transform: translateX(4px); }
+        
+        .bs-btn--ghost {
+          background: rgba(255,255,255,0.08);
+          color: var(--bs-cream);
+          border: 1px solid rgba(255,255,255,0.2);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+        .bs-btn--ghost:hover {
+          background: rgba(255,255,255,0.15);
+          transform: translateY(-2px);
+        }
+        
+        /* ---------- TRUST PILLARS ---------- */
+        .bs-trust {
+          padding: 60px 0;
+          background: var(--bs-cream);
+          border-bottom: 1px solid var(--bs-border);
+        }
+        .bs-trust__grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+        .bs-trust__item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 20px;
+          background: #fff;
+          border: 1px solid var(--bs-border);
+          border-radius: var(--bs-radius);
+          transition: all 0.35s var(--bs-ease);
+        }
+        .bs-trust__item:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--bs-shadow-md);
+          border-color: var(--bs-gold-soft);
+        }
+        .bs-trust__icon {
+          font-size: 28px;
+          width: 52px; height: 52px;
+          display: grid;
+          place-items: center;
+          background: linear-gradient(135deg, var(--bs-forest) 0%, var(--bs-forest-3) 100%);
+          border-radius: 14px;
+          flex-shrink: 0;
+        }
+        .bs-trust__item h4 {
+          font-family: 'Syne', serif;
+          font-size: 16px;
+          font-weight: 700;
+          margin: 0 0 2px;
+          color: var(--bs-forest);
+        }
+        .bs-trust__item p {
+          font-size: 13px;
+          color: var(--bs-muted);
+          margin: 0;
+        }
+        
+        /* ---------- BRAND LOGOS ---------- */
+        .bs-logos {
+          padding: 60px 0;
+          background: var(--bs-cream);
+          border-bottom: 1px solid var(--bs-border);
+          text-align: center;
+        }
+        .bs-logos__label {
+          font-size: 13px;
+          font-weight: 500;
+          color: var(--bs-muted);
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          margin: 0 0 32px;
+        }
+        .bs-logos__track {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 48px;
+        }
+        .bs-logos__item {
+          opacity: 0.5;
+          transition: opacity 0.3s var(--bs-ease);
+          width: 120px;
+          height: 30px;
+        }
+        .bs-logos__item:hover {
+          opacity: 1;
+        }
+        .bs-logos__item svg {
+          width: 100%;
+          height: 100%;
+        }
+        
+        /* ---------- SECTION HEADS ---------- */
+        .bs-section-head {
+          text-align: center;
+          max-width: 680px;
+          margin: 0 auto 56px;
+        }
+        .bs-eyebrow {
+          display: inline-block;
+          padding: 6px 14px;
+          background: rgba(234, 88, 12, 0.1);
+          color: var(--bs-gold);
+          border-radius: 100px;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          margin-bottom: 18px;
+        }
+        .bs-section-title {
+          font-family: 'Syne', serif;
+          font-size: clamp(2rem, 4vw, 3rem);
+          font-weight: 800;
+          line-height: 1.1;
+          letter-spacing: -0.02em;
+          color: var(--bs-forest);
+          margin: 0 0 16px;
+        }
+        .bs-section-sub {
+          font-size: 1.05rem;
+          color: var(--bs-muted);
+          line-height: 1.6;
+          margin: 0;
+        }
+        
+        /* ---------- HOW IT WORKS ---------- */
+        .bs-how {
+          padding: 100px 0;
+          background: var(--bs-cream);
+        }
+        .bs-how__toggle {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin-bottom: 48px;
+          padding: 6px;
+          background: #fff;
+          border: 1px solid var(--bs-border);
+          border-radius: 100px;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .bs-how__tab {
+          padding: 12px 28px;
+          border: none;
+          background: transparent;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--bs-muted);
+          border-radius: 100px;
+          cursor: pointer;
+          transition: all 0.3s var(--bs-ease);
+        }
+        .bs-how__tab.bs-active {
+          background: var(--bs-forest);
+          color: var(--bs-cream);
+          box-shadow: var(--bs-shadow-sm);
+        }
+        
+        .bs-how__flow {
+          display: none;
+          grid-template-columns: 1fr auto 1fr auto 1fr;
+          align-items: stretch;
+          gap: 20px;
+        }
+        .bs-how__flow.bs-active {
+          display: grid;
+          animation: bs-fadeIn 0.5s var(--bs-ease);
+        }
+        @keyframes bs-fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bs-step {
+          background: #fff;
+          border: 1px solid var(--bs-border);
+          border-radius: var(--bs-radius-lg);
+          padding: 36px 28px;
+          text-align: center;
+          position: relative;
+          transition: all 0.4s var(--bs-ease);
+        }
+        .bs-step:hover {
+          transform: translateY(-6px);
+          box-shadow: var(--bs-shadow-lg);
+          border-color: var(--bs-gold-soft);
+        }
+        .bs-step__num {
+          font-family: 'Syne', serif;
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--bs-gold);
+          letter-spacing: 0.1em;
+          margin-bottom: 16px;
+        }
+        .bs-step__icon {
+          font-size: 42px;
+          width: 80px; height: 80px;
+          display: grid;
+          place-items: center;
+          background: linear-gradient(135deg, rgba(234, 88, 12, 0.08), rgba(212, 165, 116, 0.12));
+          border-radius: 22px;
+          margin: 0 auto 20px;
+        }
+        .bs-step h3 {
+          font-family: 'Syne', serif;
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: var(--bs-forest);
+          margin: 0 0 10px;
+        }
+        .bs-step p {
+          font-size: 0.95rem;
+          color: var(--bs-muted);
+          line-height: 1.6;
+          margin: 0;
+        }
+        .bs-step__arrow {
+          display: grid;
+          place-items: center;
+          font-size: 28px;
+          color: var(--bs-gold);
+          font-weight: 700;
+          align-self: center;
+        }
+        
+        /* ---------- RICH FEATURE SHOWCASE ---------- */
+        .bs-showcase {
+          padding: 100px 0;
+          background: var(--bs-cream);
+        }
+        .bs-showcase__grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+        .bs-showcase__card {
+          background: #fff;
+          border: 1px solid var(--bs-border);
+          border-radius: var(--bs-radius-lg);
+          overflow: hidden;
+          transition: all 0.4s var(--bs-ease);
+          display: flex;
+          flex-direction: column;
+        }
+        .bs-showcase__card:hover {
+          transform: translateY(-6px);
+          box-shadow: var(--bs-shadow-lg);
+          border-color: var(--bs-gold-soft);
+        }
+        .bs-showcase__card--dark {
+          background: linear-gradient(160deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
+          border-color: transparent;
+        }
+        .bs-showcase__card--dark .bs-showcase__content h3 {
+          color: var(--bs-cream);
+        }
+        .bs-showcase__card--dark .bs-showcase__content p {
+          color: rgba(250, 247, 242, 0.78);
+        }
+        .bs-showcase__card--dark .bs-showcase__kicker {
+          color: var(--bs-gold);
+        }
+        .bs-showcase__card--dark .bs-showcase__stat strong {
+          color: var(--bs-cream);
+        }
+        .bs-showcase__card--dark .bs-showcase__stat span {
+          color: rgba(250, 247, 242, 0.6);
+        }
+        
+        .bs-showcase__media {
+          position: relative;
+          aspect-ratio: 16/10;
+          overflow: hidden;
+          background: var(--bs-cream-2);
+        }
+        .bs-showcase__media--small {
+          aspect-ratio: 16/9;
+        }
+        .bs-showcase__media img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s var(--bs-ease);
+        }
+        .bs-showcase__card:hover .bs-showcase__media img {
+          transform: scale(1.05);
+        }
+        .bs-showcase__media-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, transparent 40%, rgba(11, 31, 20, 0.4) 100%);
+          display: grid;
+          place-items: center;
+        }
+        .bs-showcase__media-overlay--dark {
+          background: linear-gradient(180deg, rgba(11, 31, 20, 0.3) 0%, rgba(11, 31, 20, 0.7) 100%);
+        }
+        .bs-play-btn {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.95);
+          border: none;
+          display: grid;
+          place-items: center;
+          cursor: pointer;
+          color: var(--bs-forest);
+          transition: all 0.3s var(--bs-ease);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        .bs-play-btn:hover {
+          transform: scale(1.1);
+          background: #fff;
+        }
+        .bs-play-btn svg {
+          margin-left: 3px;
+        }
+        .bs-showcase__badge {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          padding: 6px 12px;
+          background: var(--bs-gold);
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          border-radius: 100px;
+        }
+        
+        .bs-showcase__content {
+          padding: 28px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+        .bs-showcase__kicker {
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--bs-gold);
+          margin-bottom: 12px;
+        }
+        .bs-showcase__content h3 {
+          font-family: 'Syne', serif;
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: var(--bs-forest);
+          line-height: 1.25;
+          margin: 0 0 12px;
+        }
+        .bs-showcase__content p {
+          font-size: 0.95rem;
+          color: var(--bs-muted);
+          line-height: 1.6;
+          margin: 0;
+        }
+        
+        .bs-showcase__stats {
+          display: flex;
+          gap: 24px;
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bs-showcase__stat {
+          display: flex;
+          flex-direction: column;
+        }
+        .bs-showcase__stat strong {
+          font-family: 'Syne', serif;
+          font-size: 1.5rem;
+          font-weight: 800;
+          color: var(--bs-cream);
+          line-height: 1;
+        }
+        .bs-showcase__stat span {
+          font-size: 12px;
+          color: rgba(250, 247, 242, 0.6);
+          margin-top: 4px;
+        }
+        
+        /* ---------- IMPACT STATS ---------- */
+        .bs-impact {
+          padding: 100px 0;
+          background: linear-gradient(180deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
+          color: var(--bs-cream);
+        }
+        .bs-impact__inner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 64px;
+          align-items: center;
+        }
+        .bs-impact__visual {
+          position: relative;
+        }
+        .bs-impact__chart {
+          position: relative;
+          aspect-ratio: 2/1;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: var(--bs-radius-lg);
+          padding: 24px;
+          overflow: hidden;
+        }
+        .bs-impact__svg {
+          width: 100%;
+          height: 100%;
+        }
+        .bs-impact__line {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: bs-draw-line 2.5s var(--bs-ease) forwards;
+        }
+        .bs-impact__area {
+          opacity: 0;
+          animation: bs-fade-in 1s ease 1.5s forwards;
+        }
+        @keyframes bs-draw-line {
+          to { stroke-dashoffset: 0; }
+        }
+        @keyframes bs-fade-in {
+          to { opacity: 1; }
+        }
+        .bs-impact__dot-pulse {
+          animation: bs-pulse-ring 2s infinite;
+          transform-origin: center;
+        }
+        @keyframes bs-pulse-ring {
+          0% { r: 6; opacity: 1; }
+          100% { r: 18; opacity: 0; }
+        }
+        
+        .bs-impact__floating-card {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          padding: 12px 16px;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+        .bs-impact__floating-label {
+          font-size: 11px;
+          color: var(--bs-muted);
+          font-weight: 500;
+        }
+        .bs-impact__floating-value {
+          font-family: 'Syne', serif;
+          font-size: 1.3rem;
+          font-weight: 800;
+          color: var(--bs-forest);
+          line-height: 1;
+        }
+        .bs-impact__floating-change {
+          font-size: 12px;
+          color: #16a34a;
+          font-weight: 600;
+        }
+        
+        .bs-impact__numbers {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        .bs-impact__number {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .bs-impact__number strong {
+          font-family: 'Syne', serif;
+          font-size: 2.5rem;
+          font-weight: 800;
+          line-height: 1;
+          background: linear-gradient(135deg, var(--bs-gold) 0%, var(--bs-gold-soft) 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .bs-impact__number span {
+          font-size: 13px;
+          color: rgba(250, 247, 242, 0.7);
+        }
+        
+        /* ---------- WHY BUYSELL ---------- */
+        .bs-why {
+          padding: 100px 0;
+          background: linear-gradient(180deg, var(--bs-cream) 0%, var(--bs-cream-2) 100%);
+        }
+        .bs-why__grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        .bs-why__card {
+          background: #fff;
+          border: 1px solid var(--bs-border);
+          border-radius: var(--bs-radius-lg);
+          padding: 36px 30px;
+          position: relative;
+          transition: all 0.4s var(--bs-ease);
+        }
+        .bs-why__card:hover {
+          transform: translateY(-6px);
+          box-shadow: var(--bs-shadow-lg);
+        }
+        .bs-why__card--featured {
+          background: linear-gradient(160deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
+          color: var(--bs-cream);
+          border-color: transparent;
+        }
+        .bs-why__card--featured h3 { color: var(--bs-cream); }
+        .bs-why__card--featured p { color: rgba(250, 247, 242, 0.78); }
+        .bs-why__card--featured .bs-why__card-icon {
+          background: rgba(234, 88, 12, 0.18);
+        }
+        .bs-why__card-badge {
+          position: absolute;
+          top: 20px; right: 20px;
+          padding: 5px 12px;
+          background: var(--bs-gold);
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          border-radius: 100px;
+        }
+        .bs-why__card-icon {
+          font-size: 32px;
+          width: 64px; height: 64px;
+          display: grid;
+          place-items: center;
+          background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), rgba(212, 165, 116, 0.15));
+          border-radius: 18px;
+          margin-bottom: 22px;
+        }
+        .bs-why__card h3 {
+          font-family: 'Syne', serif;
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: var(--bs-forest);
+          margin: 0 0 12px;
+          line-height: 1.3;
+        }
+        .bs-why__card p {
+          font-size: 0.95rem;
+          color: var(--bs-muted);
+          line-height: 1.65;
+          margin: 0;
+        }
+        
+        /* ---------- TESTIMONIALS ---------- */
+        .bs-testimonials {
+          padding: 100px 0;
+          background: var(--bs-cream);
+        }
+        .bs-testimonials__grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+        .bs-testimonial {
+          background: #fff;
+          border: 1px solid var(--bs-border);
+          border-radius: var(--bs-radius-lg);
+          padding: 32px;
+          transition: all 0.4s var(--bs-ease);
+        }
+        .bs-testimonial:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--bs-shadow-md);
+          border-color: var(--bs-gold-soft);
+        }
+        .bs-testimonial__stars {
+          color: var(--bs-gold);
+          font-size: 16px;
+          letter-spacing: 3px;
+          margin-bottom: 16px;
+        }
+        .bs-testimonial__quote {
+          font-size: 1rem;
+          line-height: 1.65;
+          color: var(--bs-ink);
+          margin: 0 0 24px;
+          font-style: italic;
+        }
+        .bs-testimonial__author {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding-top: 20px;
+          border-top: 1px solid var(--bs-border);
+        }
+        .bs-testimonial__author strong {
+          display: block;
+          font-family: 'Syne', serif;
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--bs-forest);
+        }
+        .bs-testimonial__author span {
+          font-size: 13px;
+          color: var(--bs-muted);
+        }
+        
+        /* ---------- FAQ ---------- */
+        .bs-faq {
+          padding: 100px 0;
+          background: var(--bs-cream);
+        }
+        .bs-faq__list {
+          max-width: 800px;
+          margin: 0 auto;
+        }
+        .bs-faq__item {
+          border-bottom: 1px solid var(--bs-border);
+        }
+        .bs-faq__trigger {
+          width: 100%;
+          background: none;
+          border: none;
+          padding: 24px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 24px;
+          cursor: pointer;
+          text-align: left;
+          transition: color 0.3s var(--bs-ease);
+        }
+        .bs-faq__trigger:hover {
+          color: var(--bs-gold);
+        }
+        .bs-faq__trigger h3 {
+          font-family: 'Syne', serif;
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: var(--bs-forest);
+          margin: 0;
+          line-height: 1.3;
+          transition: color 0.3s var(--bs-ease);
+        }
+        .bs-faq__trigger:hover h3 {
+          color: var(--bs-gold);
+        }
+        .bs-faq__icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: var(--bs-forest);
+          display: grid;
+          place-items: center;
+          flex-shrink: 0;
+          transition: all 0.4s var(--bs-ease);
+        }
+        .bs-faq__icon svg {
+          width: 16px;
+          height: 16px;
+        }
+        .bs-faq__icon svg rect {
+          fill: var(--bs-cream);
+          transition: transform 0.4s var(--bs-ease);
+          transform-origin: center;
+        }
+        .bs-faq__item.is-open .bs-faq__icon {
+          background: var(--bs-gold);
+          transform: rotate(45deg);
+        }
+        
+        .bs-faq__content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s var(--bs-ease);
+        }
+        .bs-faq__content p {
+          padding: 0 0 24px;
+          font-size: 1rem;
+          color: var(--bs-muted);
+          line-height: 1.65;
+          margin: 0;
+        }
+        .bs-faq__item.is-open .bs-faq__content {
+          max-height: 300px;
+        }
+        
+        /* ---------- FINAL CTA ---------- */
+        .bs-final-cta {
+          padding: 80px 0 120px;
+          background: var(--bs-cream);
+        }
+        .bs-final-cta__inner {
+          background: linear-gradient(160deg, var(--bs-forest) 0%, var(--bs-forest-2) 100%);
+          color: var(--bs-cream);
+          border-radius: var(--bs-radius-lg);
+          padding: 80px 40px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+          isolation: isolate;
+        }
+        .bs-final-cta__inner::before {
+          content: '';
+          position: absolute;
+          width: 400px; height: 400px;
+          background: var(--bs-gold);
+          border-radius: 50%;
+          filter: blur(120px);
+          opacity: 0.2;
+          top: -150px; right: -100px;
+          z-index: -1;
+        }
+        .bs-final-cta__inner h2 {
+          font-family: 'Syne', serif;
+          font-size: clamp(1.8rem, 4vw, 2.8rem);
+          font-weight: 800;
+          line-height: 1.15;
+          margin: 0 0 16px;
+          letter-spacing: -0.02em;
+        }
+        .bs-final-cta__inner p {
+          font-size: 1.05rem;
+          color: rgba(250, 247, 242, 0.78);
+          margin: 0 0 36px;
+        }
+        .bs-final-cta__bag {
+          width: 80px;
+          height: 96px;
+          margin: 0 auto 24px;
+          animation: bs-bag-float 3s ease-in-out infinite;
+        }
+        .bs-final-cta__bag svg {
+          width: 100%;
+          height: 100%;
+        }
+        @keyframes bs-bag-float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        .bs-final-cta__form {
+          max-width: 480px;
+          margin: 0 auto;
+        }
+        .bs-final-cta__input-wrap {
+          display: flex;
+          gap: 8px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 100px;
+          padding: 6px 6px 6px 20px;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          transition: all 0.3s var(--bs-ease);
+        }
+        .bs-final-cta__input-wrap:focus-within {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: var(--bs-gold);
+          box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15);
+        }
+        .bs-final-cta__input-wrap input {
+          flex: 1;
+          background: none;
+          border: none;
+          outline: none;
+          color: var(--bs-cream);
+          font-family: 'DM Sans', sans-serif;
+          font-size: 15px;
+          min-width: 0;
+        }
+        .bs-final-cta__input-wrap input::placeholder {
+          color: rgba(250, 247, 242, 0.5);
+        }
+        .bs-final-cta__form small {
+          display: block;
+          text-align: center;
+          font-size: 12px;
+          color: rgba(250, 247, 242, 0.6);
+          margin-top: 12px;
+        }
+        
+        .bs-final-cta__alt {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          margin-top: 28px;
+          color: rgba(250, 247, 242, 0.6);
+          font-size: 13px;
+        }
+        .bs-final-cta__alt span {
+          width: 40px;
+          height: 1px;
+          background: rgba(250, 247, 242, 0.2);
+          display: inline-block;
+        }
+        .bs-final-cta__alt span:first-of-type {
+          width: auto;
+          background: none;
+        }
+        
+        /* ============================================ */
+        /* RESPONSIVE                                   */
+        /* ============================================ */
+        @media (max-width: 960px) {
+          .bs-trust__grid { grid-template-columns: repeat(2, 1fr); }
+          .bs-why__grid { grid-template-columns: 1fr; }
+          .bs-how__flow.bs-active {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          .bs-step__arrow {
+            transform: rotate(90deg);
+            padding: 4px 0;
+          }
+          .bs-showcase__grid { grid-template-columns: 1fr; }
+          .bs-impact__inner { grid-template-columns: 1fr; gap: 40px; }
+          .bs-impact__number strong { font-size: 2rem; }
+        }
+        
+        @media (max-width: 640px) {
+          .bs-hero { padding: 90px 0 70px; }
+          .bs-hero__ctas { flex-direction: column; align-items: stretch; }
+          .bs-btn { justify-content: center; width: 100%; }
+          .bs-hero__proof {
+            flex-direction: column;
+            gap: 10px;
+            padding: 16px;
+            width: 100%;
+          }
+          .bs-hero__proof-text { align-items: center; text-align: center; }
+          .bs-trust__grid { grid-template-columns: 1fr; }
+          .bs-trust__item { padding: 16px; }
+          .bs-logos__track { gap: 24px; }
+          .bs-logos__item { width: 90px; }
+          .bs-testimonials__grid { grid-template-columns: 1fr; }
+          .bs-how__toggle { width: 100%; }
+          .bs-how__tab { flex: 1; padding: 12px 16px; }
+          .bs-section-head { margin-bottom: 40px; }
+          .bs-final-cta__inner { padding: 56px 24px; }
+          .bs-final-cta__buttons { flex-direction: column; }
+          .bs-step { padding: 28px 20px; }
+          .bs-final-cta__input-wrap {
+            flex-direction: column;
+            border-radius: 20px;
+            padding: 12px;
+            gap: 8px;
+          }
+          .bs-final-cta__input-wrap input {
+            padding: 8px 0;
+            text-align: center;
+          }
+          .bs-final-cta__input-wrap .bs-btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+        
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          .bs-reveal { opacity: 1; transform: none; transition: none; }
+          .bs-btn, .bs-step, .bs-trust__item, .bs-why__card, .bs-testimonial { transition: none; }
+        }
     </style>
 </head>
-
 <body>
+
+<!-- ============================================ -->
+<!-- BUYSELL NIGERIA - MARKETING LANDING PAGE     -->
+<!-- ============================================ -->
 <div id="marketing-landing" class="bs-landing">
 
   <!-- HERO SECTION -->
@@ -748,6 +1224,33 @@
     </div>
   </section>
 
+  <!-- BRAND LOGOS STRIP -->
+  <section class="bs-logos">
+    <div class="bs-container">
+      <p class="bs-logos__label bs-reveal">Trusted by Nigeria's leading brands & partners</p>
+      <div class="bs-logos__track bs-reveal">
+        <div class="bs-logos__item">
+          <svg viewBox="0 0 120 30" aria-label="Paystack"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="20" fill="#0b1f14">Paystack</text></svg>
+        </div>
+        <div class="bs-logos__item">
+          <svg viewBox="0 0 140 30" aria-label="GIG Logistics"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">GIG Logistics</text></svg>
+        </div>
+        <div class="bs-logos__item">
+          <svg viewBox="0 0 120 30" aria-label="Flutterwave"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">Flutterwave</text></svg>
+        </div>
+        <div class="bs-logos__item">
+          <svg viewBox="0 0 100 30" aria-label="DHL"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="22" fill="#0b1f14">DHL</text></svg>
+        </div>
+        <div class="bs-logos__item">
+          <svg viewBox="0 0 140 30" aria-label="Interswitch"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="18" fill="#0b1f14">Interswitch</text></svg>
+        </div>
+        <div class="bs-logos__item">
+          <svg viewBox="0 0 120 30" aria-label="Kora"><text x="0" y="22" font-family="Syne, serif" font-weight="700" font-size="20" fill="#0b1f14">Kora</text></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="bs-how">
     <div class="bs-container">
@@ -807,6 +1310,132 @@
           <div class="bs-step__icon">💰</div>
           <h3>Get Paid via Escrow</h3>
           <p>Funds release automatically on delivery. Plus — get direct WhatsApp leads from serious buyers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RICH FEATURE SHOWCASE -->
+  <section class="bs-showcase">
+    <div class="bs-container">
+      <div class="bs-section-head bs-reveal">
+        <span class="bs-eyebrow">Powerful Features</span>
+        <h2 class="bs-section-title">Everything you need to sell & buy safely</h2>
+        <p class="bs-section-sub">Built specifically for the Nigerian market — with tools that actually work here.</p>
+      </div>
+
+      <div class="bs-showcase__grid">
+        <!-- Large Feature Card 1 - Video Listings -->
+        <div class="bs-showcase__card bs-showcase__card--large bs-reveal">
+          <div class="bs-showcase__media">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="Video product listings" loading="lazy" />
+            <div class="bs-showcase__media-overlay">
+              <button class="bs-play-btn" aria-label="Play demo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+            </div>
+            <span class="bs-showcase__badge">New</span>
+          </div>
+          <div class="bs-showcase__content">
+            <span class="bs-showcase__kicker">Video Listings</span>
+            <h3>Show products in action, not just photos</h3>
+            <p>Upload 30-second video demos. Buyers see exactly what they're getting — 5x higher conversion than photo-only listings.</p>
+          </div>
+        </div>
+
+        <!-- Large Feature Card 2 - Escrow -->
+        <div class="bs-showcase__card bs-showcase__card--large bs-showcase__card--dark bs-reveal">
+          <div class="bs-showcase__media">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80" alt="Secure escrow payments" loading="lazy" />
+            <div class="bs-showcase__media-overlay bs-showcase__media-overlay--dark"></div>
+          </div>
+          <div class="bs-showcase__content">
+            <span class="bs-showcase__kicker">Escrow Protection</span>
+            <h3>Your money is safe until delivery</h3>
+            <p>Paystack holds payments in escrow. Sellers only get paid when you confirm receipt. No more "what I ordered vs what I got."</p>
+            <div class="bs-showcase__stats">
+              <div class="bs-showcase__stat">
+                <strong>₦0</strong>
+                <span>Lost to scams</span>
+              </div>
+              <div class="bs-showcase__stat">
+                <strong>100%</strong>
+                <span>Money-back guarantee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Feature Card 3 - WhatsApp Leads -->
+        <div class="bs-showcase__card bs-reveal">
+          <div class="bs-showcase__media bs-showcase__media--small">
+            <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&q=80" alt="WhatsApp chat interface" loading="lazy" />
+          </div>
+          <div class="bs-showcase__content">
+            <span class="bs-showcase__kicker">Direct WhatsApp Leads</span>
+            <h3>Serious buyers, straight to your DMs</h3>
+            <p>No more "is this available?" ghosts. Get pre-qualified buyer leads directly on WhatsApp.</p>
+          </div>
+        </div>
+
+        <!-- Small Feature Card 4 - Delivery -->
+        <div class="bs-showcase__card bs-reveal">
+          <div class="bs-showcase__media bs-showcase__media--small">
+            <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&q=80" alt="Nationwide delivery" loading="lazy" />
+          </div>
+          <div class="bs-showcase__content">
+            <span class="bs-showcase__kicker">Nationwide Delivery</span>
+            <h3>Lagos to Maiduguri in 2–5 days</h3>
+            <p>Integrated with GIG, DHL, and local logistics. Real-time tracking for every order.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT STATS -->
+  <section class="bs-impact">
+    <div class="bs-container">
+      <div class="bs-impact__inner bs-reveal">
+        <div class="bs-impact__visual">
+          <div class="bs-impact__chart">
+            <svg viewBox="0 0 400 200" class="bs-impact__svg">
+              <defs>
+                <linearGradient id="bs-chart-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ea580c;stop-opacity:0.4"/>
+                  <stop offset="100%" style="stop-color:#ea580c;stop-opacity:0"/>
+                </linearGradient>
+              </defs>
+              <path class="bs-impact__area" d="M0,180 L50,160 L100,140 L150,120 L200,90 L250,70 L300,40 L350,30 L400,10 L400,200 L0,200 Z" fill="url(#bs-chart-gradient)"/>
+              <path class="bs-impact__line" d="M0,180 L50,160 L100,140 L150,120 L200,90 L250,70 L300,40 L350,30 L400,10" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round"/>
+              <circle class="bs-impact__dot" cx="400" cy="10" r="6" fill="#ea580c"/>
+              <circle class="bs-impact__dot-pulse" cx="400" cy="10" r="6" fill="#ea580c"/>
+            </svg>
+            <div class="bs-impact__floating-card">
+              <span class="bs-impact__floating-label">Monthly GMV</span>
+              <strong class="bs-impact__floating-value">₦47.2M</strong>
+              <span class="bs-impact__floating-change">↑ 34%</span>
+            </div>
+          </div>
+        </div>
+        <div class="bs-impact__content">
+          <span class="bs-eyebrow">Real Impact</span>
+          <h2 class="bs-section-title" style="text-align:left">Nigerians are earning real money on BUYSELL</h2>
+          <p style="color:rgba(250,247,242,0.78); font-size:1.05rem; line-height:1.6; margin:0 0 32px">Our sellers aren't just making sales — they're building sustainable businesses with tools designed for this market.</p>
+          <div class="bs-impact__numbers">
+            <div class="bs-impact__number">
+              <strong data-count="10000">0</strong>
+              <span>Verified Sellers</span>
+            </div>
+            <div class="bs-impact__number">
+              <strong data-count="250000">0</strong>
+              <span>Orders Delivered</span>
+            </div>
+            <div class="bs-impact__number">
+              <strong data-count="47">0</strong>
+              <span>States Covered</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -903,19 +1532,107 @@
     </div>
   </section>
 
-  <!-- FINAL CTA -->
+  <!-- FAQ SECTION -->
+  <section class="bs-faq">
+    <div class="bs-container">
+      <div class="bs-section-head bs-reveal">
+        <span class="bs-eyebrow">FAQ</span>
+        <h2 class="bs-section-title">Questions? We've got answers.</h2>
+      </div>
+
+      <div class="bs-faq__list bs-reveal">
+        <div class="bs-faq__item">
+          <button class="bs-faq__trigger" aria-expanded="false">
+            <h3>How does BUYSELL protect me from scams?</h3>
+            <span class="bs-faq__icon">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
+            </span>
+          </button>
+          <div class="bs-faq__content">
+            <p>Every transaction is protected by our escrow system powered by Paystack. When you pay, the money is held securely until you confirm you've received your item in the condition described. If there's an issue, you get a full refund — no questions asked.</p>
+          </div>
+        </div>
+
+        <div class="bs-faq__item">
+          <button class="bs-faq__trigger" aria-expanded="false">
+            <h3>Is it really free to start selling?</h3>
+            <span class="bs-faq__icon">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
+            </span>
+          </button>
+          <div class="bs-faq__content">
+            <p>Yes! Your first month is completely free — no credit card required. You get full access to all features including video listings, WhatsApp lead integration, and escrow protection. After that, plans start at just ₦5,000/month.</p>
+          </div>
+        </div>
+
+        <div class="bs-faq__item">
+          <button class="bs-faq__trigger" aria-expanded="false">
+            <h3>How fast is delivery across Nigeria?</h3>
+            <span class="bs-faq__icon">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
+            </span>
+          </button>
+          <div class="bs-faq__content">
+            <p>Most deliveries within Lagos arrive in 24 hours. Nationwide delivery takes 2–5 business days depending on location. We partner with GIG Logistics, DHL, and trusted local couriers. Every order includes real-time tracking.</p>
+          </div>
+        </div>
+
+        <div class="bs-faq__item">
+          <button class="bs-faq__trigger" aria-expanded="false">
+            <h3>Do I need to be a tech expert to use BUYSELL?</h3>
+            <span class="bs-faq__icon">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
+            </span>
+          </button>
+          <div class="bs-faq__content">
+            <p>Not at all. If you can use Instagram or WhatsApp, you can use BUYSELL. Our store builder takes under 5 minutes, and our support team is available 24/7 via live chat. We also have video tutorials in English, Pidgin, and Yoruba.</p>
+          </div>
+        </div>
+
+        <div class="bs-faq__item">
+          <button class="bs-faq__trigger" aria-expanded="false">
+            <h3>What payment methods do you support?</h3>
+            <span class="bs-faq__icon">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="9" y="2" width="2" height="16" class="bs-faq__icon-v"/><rect x="2" y="9" width="16" height="2"/></svg>
+            </span>
+          </button>
+          <div class="bs-faq__content">
+            <p>We support all major Nigerian payment methods: debit/credit cards, bank transfers, USSD, and mobile money. All payments are processed securely through Paystack, which is PCI-DSS compliant and trusted by thousands of Nigerian businesses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENHANCED FINAL CTA -->
   <section class="bs-final-cta">
     <div class="bs-container">
       <div class="bs-final-cta__inner bs-reveal">
-        <h2>Ready to experience commerce<br/>the way it should be?</h2>
-        <p>Join thousands of Nigerians buying and selling with confidence.</p>
-        <div class="bs-final-cta__buttons">
-          <a href="#portal-grid" class="bs-btn bs-btn--primary bs-scroll-link">
-            <span>Enter Marketplace</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-          </a>
+        <div class="bs-final-cta__bag">
+          <svg viewBox="0 0 100 120" aria-hidden="true">
+            <path d="M30,35 L30,15 Q30,5 40,5 L60,5 Q70,5 70,15 L70,35" fill="none" stroke="#ea580c" stroke-width="3"/>
+            <rect x="15" y="35" width="70" height="75" rx="6" fill="#ea580c"/>
+            <circle cx="50" cy="72" r="12" fill="#0b1f14" opacity="0.3"/>
+          </svg>
+        </div>
+        <h2>Ready to start earning?</h2>
+        <p>Join 10,000+ Nigerian entrepreneurs already selling on BUYSELL. Get early access and exclusive perks.</p>
+        
+        <form class="bs-final-cta__form" onsubmit="event.preventDefault();">
+          <div class="bs-final-cta__input-wrap">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address" />
+            <button type="submit" class="bs-btn bs-btn--primary">
+              <span>Get Early Access</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+          <small>No credit card required · Free for first month</small>
+        </form>
+
+        <div class="bs-final-cta__alt">
+          <span>or</span>
           <a href="#portal-grid" class="bs-btn bs-btn--ghost bs-scroll-link">
-            <span>Start Selling Free</span>
+            <span>Explore Marketplace</span>
           </a>
         </div>
       </div>
@@ -924,7 +1641,15 @@
 
 </div>
 <!-- END MARKETING LANDING PAGE -->
-  <script>
+
+<!-- YOUR EXISTING PORTAL CODE GOES HERE -->
+<div id="landing">
+  <div id="portal-grid">
+    <!-- Your existing buyer/seller selection portal -->
+  </div>
+</div>
+
+<script>
 (function() {
   'use strict';
 
@@ -934,7 +1659,6 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          // Stagger animation slightly for grouped reveals
           setTimeout(() => entry.target.classList.add('is-visible'), i * 60);
           io.unobserve(entry.target);
         }
@@ -957,7 +1681,7 @@
     });
   });
 
-  /* ---------- How It Works — Tab Toggle ---------- */
+  /* ---------- How It Works - Tab Toggle ---------- */
   const tabs = document.querySelectorAll('.bs-how__tab');
   const flows = document.querySelectorAll('.bs-how__flow');
 
@@ -971,7 +1695,6 @@
       flows.forEach(flow => {
         if (flow.dataset.flow === target) {
           flow.classList.add('bs-active');
-          // Re-trigger reveal animations on newly visible steps
           flow.querySelectorAll('.bs-step').forEach((step, i) => {
             step.classList.remove('is-visible');
             setTimeout(() => step.classList.add('is-visible'), i * 120);
@@ -982,6 +1705,55 @@
       });
     });
   });
+
+  /* ---------- FAQ Accordion ---------- */
+  document.querySelectorAll('.bs-faq__trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.bs-faq__item');
+      const isOpen = item.classList.contains('is-open');
+      
+      document.querySelectorAll('.bs-faq__item.is-open').forEach(openItem => {
+        if (openItem !== item) openItem.classList.remove('is-open');
+      });
+      
+      item.classList.toggle('is-open', !isOpen);
+      trigger.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  /* ---------- Animated Counter ---------- */
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count);
+        const duration = 2000;
+        const start = performance.now();
+        
+        const animate = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+          
+          if (target >= 1000) {
+            el.textContent = current.toLocaleString() + '+';
+          } else {
+            el.textContent = current + (target === 47 ? '+' : 'M+');
+          }
+          
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+        
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => counterObserver.observe(c));
 })();
 </script>
-  </body>
+
+</body>
+</html>
